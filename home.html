@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>First Flask App</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+<script>
+function myFunction() {
+  $.ajax({
+              url: "/result",
+              type: "POST",
+          }).done(function(response) {
+            });
+};
+  </script>
+<body>
+  <p style="margin-left: 300px;color: cadetblue;font-size:xx-large">Check Bus</p>
+  <form  style="margin-left: 300px" action = "http://127.0.0.1:7070/checkBus" method = "POST" 
+         enctype = "multipart/form-data">
+         <label>Source </label>
+         <input type = "text" name = "source" /><br><br>
+         <label>Destination</label>
+         <input type = "text" name = "destination" /><br><br>
+         <label>Date</label>
+         <input type = "text" name = "date" /><br><br>
+         <input type = "submit"/><br><br>
+      </form>
+
+      <p style="margin-left: 300px;color: cadetblue;font-size:xx-large">Reserve Seat</p>
+      <form  style="margin-left: 300px" action = "http://127.0.0.1:7070/reserveseat" method = "POST" 
+             enctype = "multipart/form-data">
+             <label>User Name</label>
+             <input type = "text" name = "username" /><br><br>
+             <label>BusNumber</label>
+             <input type = "text" name = "BusNumber" /><br><br>
+             <label>Date</label>
+             <input type = "text" name = "date" /><br><br>
+             <label>Number of Seats</label>
+             <input type = "text" name = "seat" /><br><br>
+             <input type = "submit"/><br><br>
+          </form>
+
+
+        <p style="margin-left: 300px;color: cadetblue;font-size:xx-large">Check User Reserved Seats</p>
+          <form  style="margin-left: 300px" action = "http://127.0.0.1:7070/checkUserReserved" method = "POST" 
+                 enctype = "multipart/form-data">
+                 <label>User Name</label>
+                 <input type = "text" name = "username" /><br><br>
+                 <input type = "submit"/><br><br>
+              </form>
+    
+  
+
+
+
+
+</body>
+</html>
